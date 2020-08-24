@@ -1,8 +1,14 @@
 import React, { Component } from "react";
+import "./BoxContainer.css";
+import SmallBox from "./SmallBox";
 
 class BoxesContainer extends Component {
   render() {
-    return <div>Boxes Container</div>;
+    return (
+      <div className="BoxContainer">
+        <SmallBox />
+      </div>
+    );
   }
 }
 
