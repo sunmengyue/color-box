@@ -30,7 +30,7 @@ class SmallBox extends Component {
   generateColor() {
     this.setState({
       color: this.props.colorPalettes[
-        Math.floor(Math.random * this.props.colorPalettes.length)
+        Math.floor(Math.random() * this.props.colorPalettes.length)
       ],
     });
   }
@@ -44,7 +44,7 @@ class SmallBox extends Component {
       <div
         className="SmallBox"
         onClick={this.handleClick}
-        style={{ backgroundColor: "#e07a5f" }}
+        style={{ backgroundColor: `${this.state.color}` }}
       ></div>
     );
   }
