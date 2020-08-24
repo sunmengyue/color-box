@@ -3,15 +3,12 @@ import "./BoxContainer.css";
 import SmallBox from "./SmallBox";
 
 class BoxesContainer extends Component {
-  static defaultProps = { numOfColors: Array.from({ length: 18 }) };
+  static defaultProps = { numOfBoxes: 18 };
   render() {
-    return (
-      <div className="BoxContainer">
-        {this.props.numOfColors.map((c) => {
-          return <SmallBox />;
-        })}
-      </div>
-    );
+    const boxes = Array.from({ length: this.props.numOfBoxes }).map((b) => (
+      <SmallBox />
+    ));
+    return <div className="BoxContainer">{boxes}</div>;
   }
 }
 
