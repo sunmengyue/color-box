@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./SmallBox.css";
+import { generateRandomColor } from "./generateRandomColor";
 
 class SmallBox extends Component {
   static defaultProps = {
@@ -29,9 +30,7 @@ class SmallBox extends Component {
 
   generateColor() {
     this.setState({
-      color: this.props.colorPalettes[
-        Math.floor(Math.random() * this.props.colorPalettes.length)
-      ],
+      color: generateRandomColor(this.props.colorPalettes),
     });
   }
 
@@ -44,7 +43,9 @@ class SmallBox extends Component {
       <div
         className="SmallBox"
         onClick={this.handleClick}
-        style={{ backgroundColor: `${this.state.color}` }}
+        style={{
+          backgroundColor: `${generateRandomColor(this.props.colorPalettes)}`,
+        }}
       ></div>
     );
   }
