@@ -22,30 +22,31 @@ class SmallBox extends Component {
       "#fcbf49",
     ],
   };
+
   constructor(props) {
     super(props);
-    this.state = { color: "#fcbf49" };
+    this.state = { color: "#ef476f" };
     this.handleClick = this.handleClick.bind(this);
   }
 
-  generateColor() {
+  changeColor() {
     this.setState({
       color: generateRandomColor(this.props.colorPalettes),
     });
   }
 
   handleClick() {
-    this.generateColor();
+    this.changeColor();
   }
 
   render() {
     return (
       <div
         className="SmallBox"
-        onClick={this.handleClick}
         style={{
           backgroundColor: `${generateRandomColor(this.props.colorPalettes)}`,
         }}
+        onClick={this.handleClick}
       ></div>
     );
   }
